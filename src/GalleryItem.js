@@ -11,14 +11,19 @@ function GalleryItem(props) {
     }
     
     const detailStyle = {
-        'width': '80vw',
-        'height': '20vh',
+        'width': '50vh',
+        'height': '50vh',
         'border': '1px solid black',
         'margin': '2px',
-        'backgroundImage': `url(${props.item.artworkUrl100})`,
+        'backgroundImage': `url(${props.item.artworkUrl100.replace(
+            '100x100',
+            '600x600'
+        )})`,
         'backgroundRepeat': 'no-repeat',
         'backgroundSize': 'cover',
-        'color': 'yellow'
+        'color': 'white',
+        'textShadow':
+        '1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black'
     }
 
     const simpleView = () => {
