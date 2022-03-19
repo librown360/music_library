@@ -1,8 +1,7 @@
 // This component will make a separate API call from the app
 // component to serve specific data about our artist
 import { useState, useEffect } from 'react'
-import { useParams , Link} from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { useParams , Link, useNavigate} from 'react-router-dom'
 
 function ArtistView() {
     const navigate = useNavigate()
@@ -25,7 +24,7 @@ function ArtistView() {
         return (
             <div key={i}>
                 <Link to={`/album/${album.collectionId}`}>
-                <p>{album.collectionName}</p>
+                    <p>{album.collectionName}</p>
                 </Link>
             </div>
         )
@@ -43,8 +42,8 @@ function ArtistView() {
 
     return (
         <div>
-            {artistData.length > 0 ? <h2>{artistData[0].artistName}</h2> : <h2>Loading...</h2>}
             {navButtons()}
+            {artistData.length > 0 ? <h2>{artistData[0].artistName}</h2> : <h2>Loading...</h2>}
             {renderAlbums}
         </div>
     )
